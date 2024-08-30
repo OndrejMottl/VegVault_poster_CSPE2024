@@ -1,40 +1,8 @@
-# Project template
-
-Template for a general structure of a project
+# VegVault poster CSPE 2024
 
 ## General info
 
-This template is a recommended structure for R projects which consists of modular codes with individual functions and purposes. The Config file is the single file where all variables, packages, criteria are defined. Operations are singled out in folders and R-codes.
-
-## Default Main structure
-
-```
-
-├─ Data
-|   ├─ Input
-|   ├─ Processed
-|   └─ Temp
-├─ Outputs
-|   ├─ Data
-|   ├─ Figures
-|   └─ Tables
-├─ R
-|   ├─ ___Init_project___.R
-|   ├─ 00_Config_file.R
-|   ├─ 01_Data_processing
-|   ├─ 02_Main_analyses
-|   ├─ 03_Supplementary_analyses
-|   ├─ Functions
-|       └─ example_fc.R
-├─ renv
-|   ├─ activate.R
-|   ├─ library
-|   ├─ settings.json
-|   └─ library_list.lock
-├─ README.md
-├─ LICENSE
-└─ [project name].Rproj
-```
+Code to produce visualisation for a VegVault poster for [CSPE conference September 2024](https://www.cspe.cz/konference/ekologie-2024/)
 
 ## Getting the code
 
@@ -45,6 +13,7 @@ The project is accessible in two ways:
   2. A user can download the latest *Release* of the project as a zip file from the Release page.
 
 The R project consists of codes with individual scripts and functions. All scripts are stored in the `R/` folder.
+
 ## Set up
 
 Once a user obtains their version of the project, there are several steps to be done before using it:
