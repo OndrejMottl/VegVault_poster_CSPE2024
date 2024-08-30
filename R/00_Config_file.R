@@ -1,13 +1,13 @@
 #----------------------------------------------------------#
 #
 #
-#                     Project name
+#                VegVault poster CSPE2024
 #
 #                     Config file
 #
 #
 #                       O. Mottl
-#                         2023
+#                         2024
 #
 #----------------------------------------------------------#
 # Configuration script with the variables that should be consistent throughout
@@ -39,18 +39,18 @@ if (
   library(here)
   # Synchronise the package versions
   renv::restore(
-    lockfile = here::here("renv/library_list.lock")
+    lockfile = here::here("renv.lock")
   )
   already_synch <- TRUE
 
   # Save snapshot of package versions
-  # renv::snapshot(lockfile =  "renv/library_list.lock")  # do only for update
+  # renv::snapshot(lockfile =  "renv.lock")  # do only for update
 }
 
 # Define packages
 package_list <-
   c(
-   "assertthat",
+    "assertthat",
     "devtools",
     "here",
     "httpgd",
@@ -89,16 +89,20 @@ current_dir <- here::here()
 # get vector of general functions
 fun_list <-
   list.files(
-    path = "R/Functions/",
+    path = here::here("R/Functions/"),
     pattern = "*.R",
     recursive = TRUE
   )
 
 # source them
-sapply(
-  paste0("R/functions/", fun_list, sep = ""),
-  source
-)
+if (
+  length(fun_list) > 0
+) {
+  here::here("R/Functions", fun_list) %>%
+    purrr::walk(
+      .f = source
+    )
+}
 
 
 #----------------------------------------------------------#
